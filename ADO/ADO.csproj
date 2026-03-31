@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E008D4CA-546E-4A9D-9D1A-D2F1601A67DE}</ProjectGuid>
+    <ProjectGuid>{D25CCA51-863E-3325-9A85-82139A7DC24E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>ADO</RootNamespace>
     <AssemblyName>ADO</AssemblyName>
