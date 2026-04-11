@@ -26,7 +26,7 @@ namespace Academy
                 ),
             new Query
                 (
-                    "group_id,group_name,start_date, start_time,learning_day,direction_name",
+                    "group_id,group_name,start_date, start_time,learning_days,direction_name",
                     "Groups,Directions",
                     "direction=direction_id"
                 ),
@@ -62,7 +62,7 @@ namespace Academy
         {
             dgvGroups.DataSource = connector.Load
                 (
-                    queries[1].ToString() + $" AND WHERE direction={cbGroupsDirection.SelectedValue}"
+                    queries[1].ToString() + $" AND direction={cbGroupsDirection.SelectedValue}"
                 );
             toolStripStatusLabel.Text = $"Количество записей: {dgvGroups.RowCount - 1}";
         }
