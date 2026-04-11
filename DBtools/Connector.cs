@@ -118,7 +118,6 @@ AND		CONSTRAINT_TYPE=N'PRIMARY KEY'
                 condition += $"{split_fields[i]}={split_values[i]}";
                 if (i != split_values.Length - 1) condition += " AND ";
             }
-            string cmd = $"UPDATE {table} SET {parsed} WHERE {condition}";
             if (Scalar($"SELECT {GetPrimaryKeyColumnName(table)} FROM {table} WHERE {condition} ") == null)
                 Insert($"INSERT {table}({fields}) VALUES({values})");
         }
@@ -143,13 +142,14 @@ AND		CONSTRAINT_TYPE=N'PRIMARY KEY'
                 if (i != s_values.Length - 1) parsed += ",";
             }
             string cmd = $"UPDATE {table} SET {parsed} WHERE {condition}";
-            if(Scalar($"SELECT {GetPrimaryKeyColumnName(table)} WHERE {parsed.Replace(",", " AND ")} ") == null)
+            if(Scalar($"SELECT {GetPrimaryKeyColumnName(table)} FROm {table} WHERE {parsed.Replace(",", " AND ")} ") == null)
             Update(cmd);
         }
         string ParseValue(string value)
         {
             if (value.Length > 1)
             {
+                value = value.Trim(); //Метод Trim удаляет пробелы в начале и в конце строки
                 if (value[0] != 'N' && value[1] != '\'') value = $"N'{value}'";
             }
             return value;
