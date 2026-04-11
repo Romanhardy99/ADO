@@ -49,7 +49,7 @@ namespace Academy
         private void tabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = (sender as  TabControl).SelectedIndex; //получаем номер выбранной вкладки
-            tables[i].DataSource = connector.Select(queries[i].ToString());
+            tables[i].DataSource = connector.Load(queries[i].ToString());
             //tables[i].DataSource = connector.Select("*", tabControl.SelectedTab.Text);
             toolStripStatusLabel.Text = $"Количество записей: {tables[i].RowCount-1}";
         }
