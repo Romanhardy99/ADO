@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.cbStudentGroup = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelGroup = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -42,15 +41,6 @@
             this.cbStudentGroup.Name = "cbStudentGroup";
             this.cbStudentGroup.Size = new System.Drawing.Size(246, 33);
             this.cbStudentGroup.TabIndex = 18;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(190, 371);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "label1";
             // 
             // labelGroup
             // 
@@ -69,12 +59,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 417);
             this.Controls.Add(this.labelGroup);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.cbStudentGroup);
             this.Name = "StudentForm";
             this.Text = "StudentForm";
             this.Controls.SetChildIndex(this.cbStudentGroup, 0);
-            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.labelGroup, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -84,7 +72,6 @@
         #endregion
 
         private System.Windows.Forms.ComboBox cbStudentGroup;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelGroup;
     }
 }

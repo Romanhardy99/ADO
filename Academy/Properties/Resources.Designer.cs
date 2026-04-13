@@ -63,29 +63,9 @@ namespace Academy.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pcb_circuit_board_abstract_pechatnaia_plata_montazhnaia_plat {
-            get {
-                object obj = ResourceManager.GetObject("pcb-circuit-board-abstract-pechatnaia-plata-montazhnaia-plat", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap stud {
             get {
                 object obj = ResourceManager.GetObject("stud", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap windows_windows8_lines {
-            get {
-                object obj = ResourceManager.GetObject("windows-windows8-lines", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
