@@ -39,7 +39,7 @@
             this.textBoxMiddleName = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.textBoxPhone = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDateBirth = new System.Windows.Forms.DateTimePicker();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
             this.pictureBoxPhoto = new System.Windows.Forms.PictureBox();
             this.buttonBrowse = new System.Windows.Forms.Button();
             this.buttonOK = new System.Windows.Forms.Button();
@@ -170,15 +170,15 @@
             this.textBoxPhone.Size = new System.Drawing.Size(246, 31);
             this.textBoxPhone.TabIndex = 11;
             // 
-            // dateTimePickerDateBirth
+            // dtpBirthDate
             // 
-            this.dateTimePickerDateBirth.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerDateBirth.CustomFormat = "yyyy.MMMM.dd";
-            this.dateTimePickerDateBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dateTimePickerDateBirth.Location = new System.Drawing.Point(190, 135);
-            this.dateTimePickerDateBirth.Name = "dateTimePickerDateBirth";
-            this.dateTimePickerDateBirth.Size = new System.Drawing.Size(246, 31);
-            this.dateTimePickerDateBirth.TabIndex = 12;
+            this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpBirthDate.CustomFormat = "yyyy.MMMM.dd";
+            this.dtpBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpBirthDate.Location = new System.Drawing.Point(190, 135);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(246, 31);
+            this.dtpBirthDate.TabIndex = 12;
             // 
             // pictureBoxPhoto
             // 
@@ -211,6 +211,7 @@
             this.buttonOK.TabIndex = 15;
             this.buttonOK.Text = "ОК";
             this.buttonOK.UseVisualStyleBackColor = false;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
@@ -245,7 +246,7 @@
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.pictureBoxPhoto);
-            this.Controls.Add(this.dateTimePickerDateBirth);
+            this.Controls.Add(this.dtpBirthDate);
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxMiddleName);
@@ -281,7 +282,7 @@
         private System.Windows.Forms.TextBox textBoxMiddleName;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.TextBox textBoxPhone;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDateBirth;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
         private System.Windows.Forms.PictureBox pictureBoxPhoto;
         private System.Windows.Forms.Button buttonBrowse;
         private System.Windows.Forms.Button buttonOK;
