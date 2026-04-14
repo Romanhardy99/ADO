@@ -26,7 +26,20 @@ namespace Academy
                 ),
             new Query
                 (
-                    "group_id,group_name,start_date, start_time,learning_days,direction_name",
+                    @"group_id,
+                      group_name,
+                      start_date,
+                      start_time,
+                      LTRIM(
+                            CASE WHEN learning_days & 1  = 1  THEN N' Пн' ELSE N'' END +
+                            CASE WHEN learning_days & 2  = 2  THEN N' Вт' ELSE N'' END +
+                            CASE WHEN learning_days & 4  = 4  THEN N' Ср' ELSE N'' END +
+                            CASE WHEN learning_days & 8  = 8  THEN N' Чт' ELSE N'' END +
+                            CASE WHEN learning_days & 16 = 16 THEN N' Пт' ELSE N'' END +
+                            CASE WHEN learning_days & 32 = 32 THEN N' Сб' ELSE N'' END +
+                            CASE WHEN learning_days & 64 = 64 THEN N' Вс' ELSE N'' END
+                      ) AS learning_days,
+                      direction_name",
                     "Groups,Directions",
                     "direction=direction_id"
                 ),
