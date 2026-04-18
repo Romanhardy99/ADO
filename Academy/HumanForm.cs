@@ -47,5 +47,19 @@ namespace Academy
         {
             Compress();
         }
+
+        private void buttonBrowse_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+
+            ofd.Title = "Выберите фотографию";
+            ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+            ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxPhoto.Image = Image.FromFile(ofd.FileName);
+            }
+        }
     }
 }
