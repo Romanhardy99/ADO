@@ -36,6 +36,7 @@
             // 
             this.dtpWorkSince.CustomFormat = "yyyy-MMMM-dd";
             this.dtpWorkSince.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.dtpWorkSince.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpWorkSince.Location = new System.Drawing.Point(190, 254);
             this.dtpWorkSince.Name = "dtpWorkSince";
             this.dtpWorkSince.Size = new System.Drawing.Size(200, 31);
@@ -55,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(697, 422);
             this.Controls.Add(this.textBoxRate);
             this.Controls.Add(this.dtpWorkSince);
             this.Name = "TeacherForm";
