@@ -47,6 +47,10 @@ namespace Academy
             {
                 DataBase.Connector.Update($"UPDATE Students SET {student.GetUpdateString()} WHERE stud_id={student.id}");
             }
+            if (pictureBoxPhoto.Image != null)
+            {
+                DataBase.Connector.UploadPhoto(student.SerializePhoto(), student.id, "photo", "Students");
+            }
         }
     }
 }
