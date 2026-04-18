@@ -52,7 +52,7 @@ namespace Academy
         {
             OpenFileDialog ofd = new OpenFileDialog();
 
-            ofd.Title = "Выберите фотографию";
+            //ofd.Title = "Выберите фотографию";
             ofd.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
             ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
 
