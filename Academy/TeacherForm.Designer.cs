@@ -30,6 +30,7 @@
         {
             this.dtpWorkSince = new System.Windows.Forms.DateTimePicker();
             this.textBoxRate = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // dtpWorkSince
@@ -55,13 +56,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(699, 443);
             this.Controls.Add(this.textBoxRate);
             this.Controls.Add(this.dtpWorkSince);
             this.Name = "TeacherForm";
             this.Text = "TeacherForm";
+            this.Controls.SetChildIndex(this.pictureBoxPhoto, 0);
             this.Controls.SetChildIndex(this.dtpWorkSince, 0);
             this.Controls.SetChildIndex(this.textBoxRate, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPhoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 
 namespace DBtools
 {
@@ -18,6 +19,7 @@ namespace DBtools
             connection = new SqlConnection(connection_string);
             Console.WriteLine(connection.ConnectionString);
         }
+
         public DataTable Load(string cmd)
         {
             SqlCommand command  = new SqlCommand(cmd, connection);
@@ -29,6 +31,7 @@ namespace DBtools
             connection.Close();
             return table;
         }
+
         public DataTable Select(string cmd)
         {
             DataTable table = new DataTable();
@@ -78,6 +81,7 @@ namespace DBtools
             connection.Close();
             return table;
         }
+
         public DataTable Select(string fields, string tables, string condition = "")
         {
             string cmd = $"SELECT {fields} FROM {tables}";
@@ -85,6 +89,7 @@ namespace DBtools
             Select(cmd);
             return Select(cmd);
         }
+
         public object Scalar(string cmd)
         {
             object value = null;
@@ -165,6 +170,7 @@ AND		CONSTRAINT_TYPE=N'PRIMARY KEY'
             if(Scalar($"SELECT {GetPrimaryKeyColumnName(table)} FROm {table} WHERE {parsed.Replace(",", " AND ")} ") == null)
             Update(cmd);
         }
+
         string ParseValue(string value)
         {
             if (value.Length > 1)
@@ -174,6 +180,7 @@ AND		CONSTRAINT_TYPE=N'PRIMARY KEY'
             }
             return value;
         }
+
         public void UploadPhoto(byte[] image, int id, string field, string table)
         {
             string cmd = $"UPDATE {table} SET {field} = @image WHERE {GetPrimaryKeyColumnName(table)} = {id}";
@@ -182,6 +189,28 @@ AND		CONSTRAINT_TYPE=N'PRIMARY KEY'
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
+        }
+
+        public Image DownloadPhoto(int id, string table, string field)
+        {
+            Image photo = null;
+            string cmd = $"SELECT {field} FROM {table} WHERE {GetPrimaryKeyColumnName(table)}={id}";
+            SqlCommand command = new SqlCommand(cmd, connection);
+            connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            if(reader.Read())
+            {
+                if (!reader.IsDBNull(0)) 
+                {
+                    MemoryStream ms = new MemoryStream(reader[0] as byte[]);
+                    photo = Image.FromStream(ms);
+                    ms.Close();
+                }
+            }
+            reader.Close();
+            connection.Close();
+            return photo;
         }
     }
 }

@@ -1,5 +1,7 @@
 <Solution>
-  <Project Path="Academy/Academy.csproj" Id="5215adda-7647-488f-afae-f05d6fcee383" />
+  <Project Path="Academy/Academy.csproj" Id="5215adda-7647-488f-afae-f05d6fcee383">
+    <BuildDependency Project="DBtools/DBtools.csproj" />
+  </Project>
   <Project Path="ADO/ADO.csproj" Id="e008d4ca-546e-4a9d-9d1a-d2f1601a67de" />
   <Project Path="DBtools/DBtools.csproj" Id="71358596-dba7-4a8c-897e-aae0df03a967" />
   <Project Path="DLLcheck/DLLcheck.csproj" Id="720fcaff-1ab6-4fe3-80e0-6a054f10f413" />
