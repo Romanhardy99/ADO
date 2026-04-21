@@ -27,6 +27,7 @@ namespace Academy
             student = new Models.Student(table.Rows[0].ItemArray);
             student.photo = DataBase.Connector.DownloadPhoto(id, "Students", "photo");
             human = student;
+            Console.WriteLine(human.GetType());
             Extract();
         }
         protected override void Extract()

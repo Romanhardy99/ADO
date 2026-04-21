@@ -16,6 +16,8 @@ namespace Academy
         public HumanForm()
         {
             InitializeComponent();
+            Console.WriteLine(this.GetType());
+            Console.WriteLine(human?.GetType());
         }
 
         protected virtual void Compress()
@@ -47,6 +49,9 @@ namespace Academy
         protected virtual void buttonOK_Click(object sender, EventArgs e)
         {
             Compress();
+            Console.WriteLine(this.GetType());
+            Console.WriteLine(human.GetType());
+            Console.WriteLine(human.GetNames());
         }
 
         private void buttonBrowse_Click(object sender, EventArgs e)
